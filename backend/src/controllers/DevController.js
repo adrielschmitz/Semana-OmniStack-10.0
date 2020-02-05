@@ -8,6 +8,7 @@ module.exports = {
 
     return response.json(devs);
   },
+
   async store(request, response) {
     const { github_username, techs, latitude, longitude } = request.body;
 
@@ -19,7 +20,7 @@ module.exports = {
 
       const techs_array = parseStringArray(techs);
 
-      console.log(api_response.data)
+      // console.log(api_response.data)
 
       const location = {
         type: 'Point',
@@ -36,11 +37,5 @@ module.exports = {
       })
     }
     return response.json(dev);
-  },
-  async update() {
-
-  },
-  async destroy() {
-    
   }
 };
