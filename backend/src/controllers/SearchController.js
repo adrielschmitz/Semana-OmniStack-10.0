@@ -7,6 +7,7 @@ module.exports = {
     // Buscar todos os devs num raio de 10km
     // Filtrar por tecnologias
     const techs_array = parseStringArray(techs);
+    console.log(techs_array)
 
     const devs = await Dev.find({
       techs: {
@@ -18,11 +19,12 @@ module.exports = {
             type: 'Point',
             coordinates: [longitude, latitude],
           },
-          $maxDistance: 10000,
+          $maxDistance: 10000000,
         },
       },
     })
-    console.log(techs_array)
+
+    console.log(devs)
     return response.json({ devs })
   }
 }
