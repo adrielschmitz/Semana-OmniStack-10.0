@@ -3,12 +3,18 @@ import MapView, { Marker, Callout } from 'react-native-maps';
 import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity, Keyboard } from 'react-native';
 import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import { MaterialIcons } from '@expo/vector-icons';
+
 import api from '../services/api';
+import { connect, disconnect, subscribeNewDev } from '../services/socket';
 
 const Main = ({ navigation }) => {
   const [devs, setDevs] = useState([]);
-  const [currentRegian, setCurrentRegion] = useState(null);
+  const [currentRegion, setCurrentRegion] = useState(null);
   const [techs, setTechs] = useState('');
+
+  useEffect(() => {
+    subscribeNewDev(dev => setDevs([...devs, dev]));
+  }, [devs]);
 
   useEffect(() => {
     loadInitialLocation = async () =>  {
@@ -32,33 +38,40 @@ const Main = ({ navigation }) => {
     loadInitialLocation();
   }, [])
 
-  const loadDevs = async () => {
-    const { latitude, longitude } = currentRegian;
+  const setupWebSocket = () => {
+    disconnect();
 
-    const response = await api.get('/search', {
+    const { latitude, longitude } = currentRegion;
+
+    connect(latitude, longitude, techs);
+  };
+
+  const loadDevs = async () => {
+    const { latitude, longitude } = currentRegion;
+
+    const response = await api.get('/search', {handleRegionChange,
       params: {
         latitude,
         longitude,
         techs
       }
     });
-    console.log(response.data.devs)
+    
     setDevs(response.data.devs);
+    setupWebSocket();
   }
 
   const handleRegionChange = (region) => {
     setCurrentRegion(region);
   }
 
-  if (!currentRegian) return null;
-
-  // console.log(devs)
+  if (!currentRegion) return null;
 
   return (
     <>
       <MapView
         onRegionChangeComplete={handleRegionChange}
-        initialRegion={currentRegian}
+        initialRegion={currentRegion}
         style={styles.map}
       >
         {devs.map((dev) => (
