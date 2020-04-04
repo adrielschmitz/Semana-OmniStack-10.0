@@ -15,12 +15,12 @@ the instant reload.
 + Route Params: request.params 
 + Body: request.body
 
-#### Data Base
-For data base was used the [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) in your free version, together with the 
+#### Database
+For database was used the [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) in your free version, together with the 
 [Mongose](https://www.npmjs.com/package/mongoose) library.
 
 #### External libraries
-Was used the [Axios](https://www.npmjs.com/package/axios) library for the consumed datas of the Github users.
+Was used the [Axios](https://www.npmjs.com/package/axios) library for the consume datas from Github users.
 
 ### Front-end
 For the web application was used ReactJS, HTML5 and CSS. 
@@ -35,9 +35,7 @@ internal tests, was used [Expo App](https://play.google.com/store/apps/details?i
 With the [Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable) installed, inside the backend file run the command ```yarn install``` in your terminal for the installation of the project dependecies. After this, run the command ```yarn dev```.
 
 ### Init front-end
-Inside the frontend file, run the command ```yarn install``` in your terminal for the installation of the project. After this, run the command ```yarn start```.
+Inside the frontend file, run the command ```yarn install``` in your terminal for the installation of the project dependencies. After this, run the command ```yarn start```.
 
 ### Init front-end
 Inside the mobile file, run the command ```yarn install``` in your terminal for the installation of the project dependecies. After this, run the command ```yarn start``` and you can read a QR Code with the Expo App.
-
-
