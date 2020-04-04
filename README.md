@@ -27,12 +27,17 @@ For the web application was used ReactJS, HTML5 and CSS.
 
 ### Mobile
 The application mobile was create for the IOS and Android plataforms using [React Native](https://reactnative.dev/).
-For the access to native resources was used [Expo](https://expo.io/) library.
+For the access to native resources of cell phone was used [Expo](https://expo.io/) library. For the emmulation and
+internal tests, was used [Expo App](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=end_US)
 
 ## Internal Tests
-### Init back-end
-With the [Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable) installed run the command ```yarn install``` in yout terminal for the installation of the project dependecies. After this, inside the backend file run the command 
-```yarn start```.
+### Back-end
+With the [Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable) installed, inside the backend file run the command ```yarn install``` in your terminal for the installation of the project dependecies. After this, run the command ```yarn dev```.
 
 ### Init front-end
+Inside the frontend file, run the command ```yarn install``` in your terminal for the installation of the project. After this, run the command ```yarn start```.
+
+### Init front-end
+Inside the mobile file, run the command ```yarn install``` in your terminal for the installation of the project dependecies. After this, run the command ```yarn start``` and you can read a QR Code with the Expo App.
+
 
