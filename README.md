@@ -30,6 +30,9 @@ The application mobile was create for the IOS and Android plataforms using [Reac
 For the access to native resources was used [Expo](https://expo.io/) library.
 
 ## Internal Tests
-### Running back-end
-With the [Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable) installed run the command ``` yarn install ```
-for the installation of the project dependecies. After this, inside backend file run the command ```  ```
+### Init back-end
+With the [Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable) installed run the command ```yarn install``` in yout terminal for the installation of the project dependecies. After this, inside the backend file run the command 
+```yarn start```.
+
+### Init front-end
+
