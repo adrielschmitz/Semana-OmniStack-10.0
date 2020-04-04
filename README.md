@@ -37,5 +37,5 @@ With the [Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable) insta
 ### Init front-end
 Inside the frontend file, run the command ```yarn install``` in your terminal for the installation of the project dependencies. After this, run the command ```yarn start```.
 
-### Init front-end
+### Init mobile
 Inside the mobile file, run the command ```yarn install``` in your terminal for the installation of the project dependecies. After this, run the command ```yarn start``` and you can read a QR Code with the Expo App.
